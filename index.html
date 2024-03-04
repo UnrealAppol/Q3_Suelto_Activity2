@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "output"></h1>
+    <h2 id = "output2"></h2>
+    <h3 id = "date"></h3>
+    <script>
+        function random()
+        {
+            var x = Math.floor(Math.random()*1000);
+
+            return x;
+        }
+
+        var rand = random();
+        var randstr = rand.toString();
+        var length = randstr.length;
+        
+        document.getElementById("output").innerHTML = "Randomly generated number: ".concat(" ", rand);
+
+        var hund = parseInt(randstr.charAt(0));
+        var tens = parseInt(randstr.charAt(1));
+        var ones = parseInt(randstr.charAt(2));
+
+        if(length === 3)
+        {
+            document.getElementById("output2").innerHTML = "Breakdown: " + hund + "00, " + tens + "0, " + ones;
+        }
+        else if(length === 2)
+        {
+            document.getElementById("output2").innerHTML = "Breakdown: "+ hund + "0, " + tens;
+        }
+        else
+        {
+            document.getElementById("output2").innerHTML = "Breakdown: " + ones;
+        }
+
+        var d = new Date();
+
+        document.getElementById("date").innerHTML = d;
+    </script>
+</body>
+</html>
